@@ -1,2 +1,2 @@
-# ono-tebe-nado-1
+# ono-tebe-nado
 Проект "Оно тебе надо"
