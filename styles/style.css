@@ -8,10 +8,8 @@ body {
     justify-content: center;
 }
 
-
 .base { 
     width: 1440px;
-    height: 2844px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -19,27 +17,24 @@ body {
 }
 
 /* шапка сайта */
+
 .header {
-    height: 105px;
     width: 1340px;
     margin-top: 96px;   
     margin-bottom: 92px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
     height: 105px;
     width: 148px;
-    margin-left: 208px;
-    margin-right: 356px;
+    margin-left: 208px; 
+    margin-right: 356px; 
 }
 
 .menu {
     display: flex;
-    height: 23px;
-    width: 388px;
     justify-content: start;
     font-size: 18px;
     line-height: 24px;
@@ -47,35 +42,47 @@ body {
 
 .list-menu {
     display: inline;
+    list-style-type: circle;
 }
 
 .contacts {
     width: 240px;
-    height: 97px;
     font-style: normal;
     line-height: 24px;
     font-size: 18px;
+    justify-content: end;
 }
 
 .no-underline {
     text-decoration: none;
 }
 
+.menu-margin {
+    margin-right: 32px;
+}
+
 /* главная */
 
 .main {
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: start;
+}
+
+.main-content {
     height: 757px;
     width: 1440px;
     position: relative;
     display: flex;
     margin: 0;
-    background-color: aqua;
 }
 
 .overlay {
     position: absolute;
-    width: 1440px;
-    height: 757px;
+    width: 100%;
+    height: 100%;
     background: #000000;
     opacity: 0.6;
 }
@@ -90,56 +97,40 @@ body {
     font-size: 100px;
     font-weight: bold;
     line-height: 100%;
-    letter-spacing: 60%;
+    font-style: normal;
+    letter-spacing: 0.3em;
+    /* при удалении или изменении строчки позицианирования текст смещается, нарушая задачу*/
     position: absolute;
     color: white;
 }
 
+/* абсолютное позиционирование след. 5-х стилей нужно для размещения контента на картинке */
+
 .first-main {
     position: absolute;
-    width: 1340px;
-    height: 115px;
     left: 50px;
     top: 165px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 100%;
-    letter-spacing: 0.3em;
 }
 
 .second-main {
     position: absolute;
+    /* задается ширина для размещения текста по центру */
     width: 1280px;
-    height: 100px;
     left: 50px;
     top: 300px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 100%;
     text-align: center;
-    letter-spacing: 0.3em;
+  
 }
 
 .third-main {
     position: absolute;
-    width: 1340px;
-    height: 100px;
-    right: 50px;
-    bottom: 237px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 100%;
+    left: 1007px;
+    top: 420px;
     text-align: right;
-    letter-spacing: 0.3em;
 }
 
 .main-p {
     position: absolute;
-    width: 633px;
-    height: 28px;
     left: 422px;
     top: 667px;
     font-style: normal;
@@ -154,8 +145,9 @@ body {
 
 .button-main {
     position: absolute;
+    /* размеры кнопки задаются согласно макету. Если не использовать - не совпадет с макетом */
     width: 257px;
-    height: 52px;
+    min-height: 52px;
     font-size: 22px;
     text-align: center;
     box-sizing: border-box;
@@ -163,11 +155,6 @@ body {
     top: 655px;
     border: 1px solid #FFFFFF;
     background-color: rgb(255, 255, 255, 0);
-}
-
-.button-text {
-    width: 193px;
-    height: 28px;
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
@@ -177,16 +164,21 @@ body {
     color: white;
 }
 
+.remove-right-space {
+    letter-spacing: 0;
+}
+
 /* лоты */
 
 .lots {
-    width: 1340px;
-    height: 579px;
+    display: flex;
+    max-width: 1340px;
     margin-top: 180px;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 .lots-title {
-    width: 121px;
     font-size: 40px;
     font-weight: bold;
     margin-left: 40px;
@@ -196,17 +188,18 @@ body {
 .cards {
     width: 1340px;
     margin-top: 27px;
-    height: 452px;
     display: flex;
-    justify-content: space-between;
     color: #FFFFFF;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 25px;
 }
 
 .card {
-    width: 430px;
-    height: 452px;
+    min-width: 430px;
+    min-height: 452px;
     display: flex;
-    flex-wrap: nowrap;
+
     position: relative;
 }
 
@@ -215,18 +208,10 @@ body {
     height: 452px;
 }
 
-.overlay-card {
-    position: absolute;
-    width: 430px;
-    height: 452px;
-    background: #000000;
-    opacity: 0.6;
-}
+/* абсолютное позиционирование след. 2-х стилей нужно для размещения контента на картинке */
 
 .card-title {
     position: absolute;
-    width: 350px;
-    height: 52px;
     left: 40px;
     top: 50px;
     font-weight: 700;
@@ -238,11 +223,23 @@ body {
 
 .card-text {
     position: absolute;
+    /* размеры задаются согласно макету. Если не использовать - не совпадут с макетом */
     width: 350px;
-    height: 96px;
     left: 40px;
     font-weight: 400;
     font-size: 20px;
+}
+
+.card-text-pos-f {
+    top: 302px;
+}
+
+.card-text-pos-s {
+    top: 160px;
+}
+
+.card-text-pos-th {
+    top: 208px;
 }
 
 .look-more-cards {
@@ -256,7 +253,6 @@ body {
 
 .about {
     width: 1340px;
-    height: 487px;
     display: flex;
     margin-top: 181px;
 }
@@ -267,32 +263,52 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    position: relative;
+}
+
+.logo-circle {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 0;
+    left: 95px;
+}
+
+.logo-white {
+    position: absolute;
+    top: 71px;
+    left: 141px;
+    width: 148px;
+    height: 114px;
 }
 
 .about-content {
     width: 885px;
-    height: 388px;
     margin-top: 100px;
     margin-left: 25px;
 }
 
 .about-title {
-    width: 291px;
-    height: 47px;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: bold;
 }
 
 .about-text {
-    width: 855px;
     font-size: 20px;
+}
+
+.about-text-margin-f {
+    margin-top: 100px;
+}
+
+.about-text-margin-s {
+    margin-top: 25px;
 }
 
 /* подвал */
 
 .footer {
-    height: 97px;
     width: 1340px;
     margin-top: 180px;
     display: flex;
@@ -300,16 +316,15 @@ body {
 }
 
 .menu-footer {
-    display: inline-block;
-    width: 149px;
-    height: 64px;
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
     text-align: center;
 }
 
 .socials {
+    /* размеры задаются согласно макету. Если не использовать - не совпадут с макетом */
     width: 240px;
-    height: 48px;
     display: flex;
     justify-content: space-between;
 }
