@@ -12,12 +12,13 @@
   <body>
     <div class="base">
       <header class="header" id="header">
+        <!-- grid -->
         <nav class="menu">
           <ul class="list-menu">
-            <li class="no-point-list margin-item-list">
+            <li class="no-point-list">
               <a class="no-underline-list" href="#main">главная</a>
             </li>
-            <li class="point-list margin-item-list">
+            <li class="point-list">
               <a href="#lots">посмотреть лоты</a>
             </li>
             <li class="point-list">
@@ -25,66 +26,88 @@
             </li>
           </ul>
         </nav>
-        <div class="logo">
-          <a href="#header"><img src="./images/logo-black.svg" alt="логотип"></a>
+        <div class="logo-place">
+          <div class="logo">
+            <a href="#header">
+              <img src="./images/logo-black.svg" alt="логотип">
+            </a>
+          </div>
         </div>        
-        <address class="contacts">
-            <a>+9 999 555 5555</a>
+        <address class="address">
+          <div class="contacts">
+            <a href="tel:+99995555555">+9 999 555 5555</a>
             <a href="mailto:info@sobaka.ge">info@sobaka.ge</a>
             <p>наб. Принсенграхт 263-265, Амстердам</p>
+          </div>
         </address>
       </header>
       <main class="main" id="main">
         <section class="main-content">
-          <img src="./images/cover.jpg" alt="цветы, лотусы" class="main-img">
           <div class="overlay">
-            <h1 class="main-content-h1">
+            <h1 class="main-content-h">
               <span class="first-main">оно</span>
-              <span class="second-main">те<span class="increase-letter-spcae">б</span>е</span>
-              <span class="third-main"><span class="increase-letter-spcae">н</span>ад<span class="remove-right-space">о</span></span>
+              <span class="second-main">те<span class="increase-letter-space">б</span>е</span>
+              <span class="third-main"><span class="increase-letter-space">н</span>ад<span class="remove-right-space">о</span></span>
             </h1>
+            <div class="main-paragraph">
+              <p class="main-content-paragraph">Аукцион вещей, в которые никто не верил</p>
+              <button class="button-main">сделать ставку</button>
+            </div>
           </div>
-          <p class="main-content-paragraph">Аукцион вещей, в которые никто не верил</p>
-          <button class="button-main">сделать ставку</button>
         </section>
         <section class="lots" id="lots">
           <h2 class="lots-title">лоты</h2>
           <ul class="cards">
-            <li><a href="https://practicum.yandex.ru/profile/fullstack-developer/"><article class="card">
-              <img src="./images/card-lot-01.jpg" class="card-img" alt="два человека в саду">
-              <div class="overlay"></div>
-              <h3 class="card-title">Фильм режиссёра, который  бросил киношколу</h3>
-              <p class="card-text first-card-text-pos">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
-            </article></a></li>
-            <li><a href="https://practicum.yandex.ru/profile/fullstack-developer/"><article class="card">
-              <img src="./images/card-lot-02.jpg" class="card-img" alt="Улисс Джеймса Джойса">
-              <div class="overlay"></div>
-              <h3 class="card-title">Книга, где описан один скучный день из жизни рекламного агента</h3>
-              <p class="card-text second-card-text-pos">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
-            </article></a></li>
-            <li><a href="https://practicum.yandex.ru/profile/fullstack-developer/"><article class="card">
-              <img src="./images/card-lot-03.jpg" class="card-img" alt="картина в стиле супрематизм">
-              <div class="overlay"></div>
-              <h3 class="card-title">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
-              <p class="card-text third-card-text-pos">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков… Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
-            </article></a></li>
+            <li>
+              <a href="https://practicum.yandex.ru/profile/fullstack-developer/">
+                <article class="card card-bg-lot-1">
+                  <div class="overlay-card">
+                    <h3 class="card-title">Фильм режиссёра, который  бросил киношколу</h3>
+                    <p class="card-text card-text-pos">Не просто бросил, а ушёл с первой лекции. Какой была бы ваша ставка, если бы вы не знали, что режиссёр — Пол Томас Андерсон?</p>
+                  </div>
+                </article>
+              </a>
+            </li>
+            <li>
+              <a href="https://practicum.yandex.ru/profile/fullstack-developer/">
+                <article class="card card-bg-lot-2">
+                  <div class="overlay-card">
+                    <h3 class="card-title">Книга, где описан один скучный день из жизни рекламного агента</h3>
+                    <p class="card-text card-text-pos">Объёмом почти в тысячу страниц. Иногда без знаков препинания и с переходами на древнеанглийский. В ней одновременно рассказывается о 16 июня 1904 года и об истории литературы, начиная с античных времён. И это всё накладывается на эпическую поэму Гомера. Сколько бы вы поставили на «Улисса» Джеймса Джойса?</p>
+                  </div>
+                  </article>
+              </a>
+            </li>
+            <li>
+              <a href="https://practicum.yandex.ru/profile/fullstack-developer/">
+                <article class="card card-bg-lot-3">
+                  <div class="overlay-card">
+                    <h3 class="card-title">Картина, которую повторит даже 5-летний сын маминой подруги</h3>
+                    <p class="card-text card-text-pos">Ну действительно, там линия, тут кружочек, а здесь и вовсе что-то похожее на инфузорию-туфельку. Никаких полей, лесов, котиков… Сколько бы вы на такое поставили, если бы не знали, что это — одна из революционных работ Кандинского?</p>
+                  </div>
+                </article>
+              </a>
+            </li>
           </ul>
           <a href="#lots" class="look-more-cards">посмотреть больше</a>
         </section>
         <section class="about" id="about">
           <div class="about-logo">
-            <div class="black-circle"></div>
-            <img src="./images/logo-white.svg" alt="логотип" class="logo-white">                       
+            <div class="black-circle">
+              <img src="./images/logo-white.svg" alt="логотип" class="logo-white">
+            </div>                 
           </div>
           <div class="about-content">
+            <!-- в данном блоке нет смысла использовать flex, т.к. тут только текст, который 
+            можно переставлять согласно макету с помощью отступов. Были убраны ненужные отступы и классы. -->
             <h2 class="about-title">Об аукционе</h2>
-            <p class="about-text first-about-text-margin">Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. 
+            <p class="about-text">Здесь вы не встретите очередное пафосное собрание невероятно дорогого антиквариата. 
               Наши лоты вообще не должны были попасть ни на один аукцион. Потому что кому нужен дневник девочки-подростка или картина, 
               которую может нарисовать даже ребёнок? Кому нужны все эти странные вещи, созданные любителями?</p>
-            <p class="about-text second-about-text-margin">Слишком сложные или, наоборот, слишком простые. Опережающие своё время. В пух и прах растерзанные критиками. 
+            <p class="about-text about-text-margin">Слишком сложные или, наоборот, слишком простые. Опережающие своё время. В пух и прах растерзанные критиками. 
               Непринятые и непонятые. Когда-то они казались просто неудачными. Но, несмотря на критику, кажущуюся простоту или сложность, 
               сейчас без этих лотов невозможно представить современную культуру. Когда в эти вещи не верил никто, продолжали верить их создатели. 
-              И сейчас эти лоты стали культовыми. </p>
+              И сейчас эти лоты стали культовыми.</p>
           </div>
         </section>
       </main>
@@ -96,15 +119,27 @@
         </address>
         <nav class="menu-footer">
           <ul class="no-point">
-            <li><a class="no-underline" href="#main">главная</a></li>
-            <li><a href="#lots">посмотреть лоты</a></li>
-            <li><a href="#about">об аукционе</a></li>
+            <li>
+              <a class="no-underline-list" href="#main">главная</a>
+            </li>
+            <li>
+              <a href="#lots">посмотреть лоты</a>
+            </li>
+            <li>
+              <a href="#about">об аукционе</a>
+            </li>
           </ul>
         </nav>
         <ul class="no-point socials">
-          <li><a href="https://www.youtube.com/"><img class="socials-logo" src="./images/yt.svg" alt="ютуб"></a></li>
-          <li><a href="https://vk.com/yandex.practicum"><img class="socials-logo" src="./images/vk.svg" alt="вконтакте"></a></li>
-          <li><a href="https://ru.pinterest.com/"><img class="socials-logo" src="./images/pinterest.svg" alt="пинтерест"></a></li>
+          <li>
+            <a href="https://www.youtube.com/"><img class="socials-logo" src="./images/yt.svg" alt="ютуб"></a>
+          </li>
+          <li>
+            <a href="https://vk.com/yandex.practicum"><img class="socials-logo" src="./images/vk.svg" alt="вконтакте"></a>
+          </li>
+          <li>
+            <a href="https://ru.pinterest.com/"><img class="socials-logo" src="./images/pinterest.svg" alt="пинтерест"></a>
+          </li>
         </ul>
       </footer>
     </div>
