@@ -9,7 +9,7 @@ body {
 }
 
 .base { 
-    width: 1440px;
+    max-width: 1440px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -20,39 +20,53 @@ body {
 
 .header { 
     width: 1340px; 
-    max-height: 105px;
     margin-top: 96px;    
     margin-bottom: 92px; 
-    display: flex;
-    align-items: center;
+    display: grid;
+    /* grid создан для расположения логотипа без использования margin */
+    grid-template-columns: 42% auto 42%;
 } 
  
+.logo-place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo { 
-    height: 105px; 
-    width: 148px; 
-    margin-left: 208px;  
-    margin-right: 356px;  
+    height: 104px; 
+    width: 129px; 
 } 
  
 .menu { 
     font-size: 18px; 
     line-height: 24px; 
+    display: flex;
+    justify-content: left;
+    align-items: center;
 } 
 
 .list-menu { 
     display: flex;
-    
+    /* размер задается для распределения элементов по поверхности класса*/
+    width: 388px;
+    justify-content: space-between;
 } 
 
-.margin-item-list {
-    margin-right: 32px;
+.address {
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .contacts { 
+    display: flex;
+    flex-wrap: wrap;
     width: 240px; 
     font-style: normal; 
     line-height: 24px; 
     font-size: 18px; 
+    justify-content: left;
 } 
  
 .no-underline-list { 
@@ -79,16 +93,21 @@ body {
 
 .main-content {
     width: 1440px;
-    position: relative;
+    height: 757px;
     display: flex;
     margin: 0;
+    background-image: url("../images/cover.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .overlay {
-    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     background-color: rgb(0, 0, 0, 0.6);
+    justify-content: center;
 }
 
 .main-img {
@@ -96,44 +115,50 @@ body {
     width: 1440px;
 }
 
-.main-content-h1 {
+.main-content-h {
     text-transform: uppercase;
     font-size: 100px;
     font-weight: bold;
-    line-height: 100%;
     font-style: normal;
     color: white;
-    margin: 165px 50px 237px;
+    /* размер задается для распределения текста по краям класса*/
+    width: 1340px;
+    /* высота необходима для того, чтобы убрать появившийся "отступ" снизу */
+    height: 355px;
+    margin-top: 165px;
 }
 
 .first-main {
     display: block;
-    left: 50px;
-    top: 165px;
-    margin-top: 165px;
     letter-spacing: 0.6em;
+    line-height: 115%;
 }
 
 .second-main {
     display: block;
-    left: 50px;
-    top: 300px;
     text-align: center;
-    margin-top: 20px;
     letter-spacing: 0.3em;
+    line-height: 100%;
+    margin-top: 20px;
 }
 
 .third-main {
     display: block;
-    left: 1007px;
-    top: 420px;
     text-align: right;
-    margin-top: 20px;
     letter-spacing: 0.3em;
+    line-height: 100%;
+    margin-top: 20px;
+}
+
+.main-paragraph {
+    display: flex;
+    /* ширина задается, чтобы сработал justify-content */
+    width: 100%;
+    margin-top: 135px;
+    justify-content: right;
 }
 
 .main-content-paragraph {
-    position: absolute;
     left: 422px;
     top: 667px;
     font-style: normal;
@@ -144,12 +169,16 @@ body {
     text-transform: uppercase;
     color: white;
     word-spacing: 17px;
+    margin-top: 12px;
+    margin-right: 78px;
 }   
 
 .button-main {
-    position: absolute;
     /* размеры кнопки задаются согласно макету. Если не использовать - не совпадет с макетом */
     width: 257px;
+    height: 52px;
+    margin-bottom: 50px;
+    margin-right: 50px;
     min-height: 52px;
     font-size: 22px;
     text-align: center;
@@ -171,7 +200,7 @@ body {
     letter-spacing: 0;
 }
 
-.increase-letter-spcae {
+.increase-letter-space {
     letter-spacing: 0.6em;
 }
 
@@ -203,24 +232,32 @@ body {
 }
 
 .card {
-    min-width: 430px;
-    min-height: 452px;
-    display: flex;
-
-    position: relative;
-}
-
-.card-img {
+    /* размеры задаются без min и max, т.к. карточка теряет свой размер и
+    не совпадает с макетом */
     width: 430px;
     height: 452px;
+    display: flex;
+    background-position: center;
+    background-size: cover;
 }
 
-/* абсолютное позиционирование след. 2-х стилей нужно для размещения контента на картинке */
+.card-bg-lot-1 {
+    background-image: url('../images/card-lot-01.jpg');
+
+}
+
+.card-bg-lot-2 {
+    background-image: url('../images/card-lot-02.jpg');
+}
+
+.card-bg-lot-3 {
+    background-image: url('../images/card-lot-03.jpg');
+}
 
 .card-title {
-    position: absolute;
-    left: 40px;
-    top: 50px;
+    margin-top: 48px;
+    margin-left: 40px;
+    margin-right: 40px;
     font-weight: 700;
     font-size: 22px;
     line-height: 120%;
@@ -229,7 +266,6 @@ body {
 }
 
 .card-text {
-    position: absolute;
     /* размеры задаются согласно макету. Если не использовать - не совпадут с макетом */
     width: 350px;
     left: 40px;
@@ -237,16 +273,10 @@ body {
     font-size: 20px;
 }
 
-.first-card-text-pos {
-    top: 302px;
-}
-
-.second-card-text-pos {
-    top: 160px;
-}
-
-.third-card-text-pos {
-    top: 208px;
+.card-text-pos {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 52px;
 }
 
 .look-more-cards {
@@ -254,6 +284,17 @@ body {
     margin-top: 28px;
     margin-left: 40px;
     font-size: 20px;
+}
+
+/* был добавлен новый overlay класс, так как тут нужен новый способ расположения элементов */
+
+.overlay-card {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 /* про */
@@ -273,18 +314,9 @@ body {
     position: relative;
 }
 
-.logo-circle {
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    top: 0;
-    left: 95px;
-}
-
 .logo-white {
-    position: absolute;
-    top: 71px;
-    left: 141px;
+    margin-left: 46px;
+    margin-top: 71px;
     width: 148px;
     height: 114px;
 }
@@ -299,17 +331,14 @@ body {
     text-transform: uppercase;
     font-size: 40px;
     font-weight: bold;
+    margin-bottom: 100px;
 }
 
 .about-text {
     font-size: 20px;
 }
 
-.first-about-text-margin {
-    margin-top: 100px;
-}
-
-.second-about-text-margin {
+.about-text-margin {
     margin-top: 25px;
 }
 
